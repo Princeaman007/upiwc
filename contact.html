@@ -40,56 +40,6 @@
 
   <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.js"></script>
 
-  <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-      emailjs.init('L4yKGtVdlDFSaMkgU'); 
-
-      const contactForm = document.getElementById('contactForm');
-      const statusMessage = document.getElementById('statusMessage');
-
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault(); 
-
-        const name = document.getElementById('firstName').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        console.log(name);
-
-        if (!name || !email || !message) {
-          statusMessage.innerHTML = `<div class="alert alert-warning">Veuillez remplir tous les champs.</div>`;
-          return;
-        }
-
-        emailjs.send('service_2359uht', 'template_ya65x67', {
-          from_name: name,
-          from_email: email,
-          message: message
-        })
-          .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            statusMessage.innerHTML = `<div class="alert alert-success">E-mail envoyé avec succès !</div>`;
-            contactForm.reset();
-          })
-          .catch(function (error) {
-            console.error('FAILED...', error);
-            statusMessage.innerHTML = `<div class="alert alert-danger">Échec de l'envoi de l'e-mail.</div>`;
-          });
-      });
-    });
-
-  </script> -->
-  <!-- <script>
-    document.querySelector('form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      console.log(formData);
-      fetch('https://formspree.io/f/xgvvpvdb', {
-        method: 'POST',
-        body: formData,
-      }).then((response) => response.json())
-        .then((data) => console.log(data));
-    });
-  </script> -->
 </head>
 
 <body class="contact-page">
@@ -152,7 +102,7 @@
               data-aos-delay="300">
               <i class="bi bi-telephone"></i>
               <h3>Call Us</h3>
-              <p>+32 558 554 55</p>
+              <p>+32 484 99 55 39</p>
             </div>
           </div><!-- End Info Item -->
 
@@ -249,7 +199,7 @@
           <div class="footer-contact pt-3">
             <p>Technologiestraat 51/55</p>
             <p>1082 Berchem-Sainte-Agathe</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+32 558 554 55</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+32 484 99 55 39</span></p>
             <p><strong>Email:</strong> <span>info@example.com</span></p>
           </div>
           <div class="social-links d-flex justify-content-center mt-4">
