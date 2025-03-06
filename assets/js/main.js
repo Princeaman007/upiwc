@@ -6,6 +6,8 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
+
 (function() {
   "use strict";
 
@@ -168,3 +170,40 @@
 
 })();
 
+
+
+(function() {
+    emailjs.init("8nYLZs8jJlHPAH6T7"); // Remplace par ton USER ID EmailJS
+})();
+
+function sendEmail(event) {
+    event.preventDefault(); // Empêche l'envoi classique du formulaire
+
+    // Récupération des données du formulaire
+    const templateParams = {
+        subject: document.getElementById("subject").value,
+        firstName: document.getElementById("firstName").value,
+        message: document.getElementById("message").value,
+        email: document.getElementById("email").value,
+    };
+
+    // Envoi via EmailJS
+    emailjs.send("service_kdt2u3l", "template_uf119cj", templateParams)
+        .then(response => {
+            // Affichage du message de confirmation
+            const confirmationMessage = document.getElementById("confirmation-message");
+            confirmationMessage.innerText = "Your message has been successfully sent!";
+            confirmationMessage.style.display = "block";
+
+            // Réinitialisation du formulaire
+            document.getElementById("subject").value = "";
+            document.getElementById("firstName").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+
+            console.log("SUCCESS!", response.status, response.text);
+        }, error => {
+            alert("Erreur lors de l'envoi du message.");
+            console.log("FAILED...", error);
+        });
+}
